@@ -1,0 +1,16 @@
+names:
+- Vachellia nilotica
+- Ageratum conyzoides
+- Lantana camara
+- Clitoria ternatea
+- Merremia hederacea
+nc: 5
+test:
+- /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo/dataset_v3_with_negatives/test/images
+- /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo/invasive-plants/test/images
+train:
+- /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo/dataset_v3_with_negatives/train/images
+- /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo/invasive-plants/train/images
+val:
+- /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo/dataset_v3_with_negatives/val/images
+- /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo/invasive-plants/val/images

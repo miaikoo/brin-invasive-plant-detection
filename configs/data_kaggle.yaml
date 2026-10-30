@@ -1,0 +1,11 @@
+path: /kaggle/input/datasets/miaikoo/invasive-plant-species-object-detection-yolo
+train: train/images
+val: val/images
+test: test/images
+nc: 5
+names:
+- Vachellia nilotica
+- Ageratum conyzoides
+- Lantana camara
+- Clitoria ternatea
+- Merremia hederacea
