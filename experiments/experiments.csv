@@ -1,0 +1,16 @@
+no,who,model,init_weights,preprocess,epochs,batch,imgsz,patience,optimizer,lr0,augmentation,mAP50,mAP50-95,checkpoint,notes
+1,Mia,yolo12n,yolo12n.pt,-,50,32,640,10,auto,,"hsv(0.015,0.7,0.4) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.4 mixup0.1 copy_paste0.1",0.7125,0.4262,,baseline
+2,Mia,yolo12s,yolo12s.pt,-,50,32,800,15,auto,,"hsv(0.015,0.7,0.4) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.4 mixup0.1 copy_paste0.1",0.8007,0.4685,models/exp2-best.pt,
+3,Mia,yolo12m,yolo12m.pt,-,100,8,1024,20,auto,,"hsv(0.015,0.8,0.6) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.4 mixup0.0 copy_paste0.1",0.7449,0.4576,models/exp3-best.pt,
+4,Mia,yolo12s,yolo12s.pt,ROI cropping,100,32,800,20,auto,,"hsv(0.015,0.7,0.4) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.5 mixup0.1 copy_paste0.1",0.7813,0.4300,models/exp4-best.pt,mAP columns were swapped in the source sheet; corrected here
+5,Sultan,yolov8s,yolov8s.pt,-,100,16,640,20,auto,,"hsv(0.015,0.7,0.4) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.4 mixup0.1 copy_paste0.0",0.8800,0.6662,,class mapping order was swapped -> metrics unreliable
+6,Mia,yolo11s,yolo11s.pt,ROI cropping,100,32,640,20,auto,,"hsv(0.015,0.7,0.4) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.4 mixup0.1 copy_paste0.0",0.8147,0.5100,models/exp5-best.pt,
+7,Sultan,yolov8s,yolov8s.pt,-,100,16,640,20,auto,,"hsv(0.015,0.7,0.4) deg10 trans0.1 scale0.5 fliplr0.5 mosaic0.4 mixup0.1 copy_paste0.0",,,,re-run of #5; results missing
+8,Rachel,yolov8n,yolov8n.pt,-,50,16,640,15,auto,0.01,ultralytics defaults,0.8890,0.6830,,
+9,Efan,,,-,,,,,,,,0.9130,0.7090,,training args not recorded; this checkpoint (best-model-epan) initialised the final model
+10,Fina,yolo12n,yolo12n.pt,-,60,16,800,15,SGD,,"hsv(0.015,0.7,0.4) fliplr0.5 mosaic0.0 mixup0.0 close_mosaic20",0.8850,0.6560,,
+11,Rachel,yolo11s,yolo11s.pt,-,120,16,832,25,SGD,0.01,"hsv(0.015,0.5,0.3) deg5 trans0.05 scale0.2 mosaic0.2 mixup0.05; cos_lr warmup5 freeze10",0.9040,0.6710,,
+12,Rachel,yolov8m,yolov8m.pt,-,50,16,640,15,auto,0.01,ultralytics defaults,0.8970,0.6690,,
+13,Efan,yolo11s,yolo11s.pt,-,150,16,640,25,auto,,"hsv(0.02,0.7,0.4) deg15 mosaic0.2 mixup0.1 (Vachellia-focused)",0.9270,0.6790,,highest mAP50
+14,Efan,,,offline Albumentations (HFlip SafeRotate20 BrightnessContrast HSV GaussianBlur),30,4 (grad accum 4),,,,,,0.9068,0.6830,,model not recorded
+final,Mia,yolo11s,Efan's checkpoint (#9),-,100 (early stop @87; best @67),8,768,20,AdamW,0.0005,"hsv(0.015,0.4,0.25) light aug; cos_lr",0.9150,0.6660,models/yolo11s_img768_adamw/best.pt,trained on dataset_v3_with_negatives + invasive-plants; metrics from model.val() on 296-image val split
