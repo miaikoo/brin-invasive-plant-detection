@@ -1,0 +1,24 @@
+# Data: hosted on Kaggle (see README)
+data/
+
+# Model weights: published via GitHub Releases / Hugging Face
+models/
+*.pt
+*.onnx
+
+# Bulky result artifacts (curated samples live in assets/)
+results/**/test_predictions/
+results/**/xai_feature_maps/**/*.npy
+runs/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
